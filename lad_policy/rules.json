@@ -337,7 +337,7 @@
                           "resourceId": "[parameters('resourceId')]"
                         },
                         "syslogEvents": {
-                          "sinks": "SyslogJsonBlob,LoggingEventHub",
+                          "sinks": "LoggingEventHub",
                           "syslogEventConfiguration": {
                             "LOG_AUTH": "LOG_INFO",
                             "LOG_AUTHPRIV": "LOG_INFO",
@@ -367,22 +367,27 @@
                       {
                         "file": "/var/log/audit/audit.log",
                         "table": "AuditLogs",
-                        "sinks": "AuditLogsJsonBlob,LoggingEventHub"
+                        "sinks": "LoggingEventHub"
                       },
                       {
                         "file": "/var/log/messages",
                         "table": "MessagesLogs",
-                        "sinks": "MessagesLogsJsonBlob,LoggingEventHub"
+                        "sinks": "LoggingEventHub"
                       },
                       {
                         "file": "/var/log/secure",
                         "table": "SecureLogs",
-                        "sinks": "SecureLogsJsonBlob,LoggingEventHub"
+                        "sinks": "LoggingEventHub"
                       },
                       {
                         "file": "/var/log/yum.log",
                         "table": "YumLogs",
-                        "sinks": "YumLogsJsonBlob,LoggingEventHub"
+                        "sinks": "LoggingEventHub"
+                      },
+                      {
+                        "file": "/var/log/azure/Microsoft.Azure.Diagnostics.LinuxDiagnostic/extension.log",
+                        "table": "LinuxDiagnosticLogs",
+                        "sinks": "LoggingEventHub"
                       }
                     ]
                   },
@@ -391,26 +396,6 @@
                     "storageAccountSasToken": "[parameters('diagnosticsStorageAccountSas')]",
                     "sinksConfig": {
                       "sink": [
-                        {
-                          "name": "SyslogJsonBlob",
-                          "type": "JsonBlob"
-                        },
-                        {
-                          "name": "AuditLogsJsonBlob",
-                          "type": "JsonBlob"
-                        },
-                        {
-                          "name": "MessagesLogsJsonBlob",
-                          "type": "JsonBlob"
-                        },
-                        {
-                          "name": "SecureLogsJsonBlob",
-                          "type": "JsonBlob"
-                        },
-                        {
-                          "name": "YumLogsJsonBlob",
-                          "type": "JsonBlob"
-                        },
                         {
                           "name": "LoggingEventHub",
                           "type": "EventHub",
