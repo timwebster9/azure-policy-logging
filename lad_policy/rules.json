@@ -423,15 +423,6 @@
               }
             ]
           },
-          "variables": {
-            "accountSasProperties": {
-              "signedServices": "bt",
-              "signedPermission": "wlacutfx",
-              "signedExpiry": "2021-08-06T22:08:39Z",
-              "signedResourceTypes": "co",
-              "signedProtocol": "https"
-            }
-          },
           "parameters": {
             "vmName": {
               "value": "[field('name')]"
