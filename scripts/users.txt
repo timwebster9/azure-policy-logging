@@ -1,0 +1,4 @@
+azureuser:x:1000:1000:Cloud User:/home/azureuser:/bin/bash
+omi:x:996:992::/home/omi:/bin/false
+omsagent:x:995:993:OMS agent:/var/opt/microsoft/omsagent/run:/bin/bash
+nxautomation:x:994:990:nxOMSAutomation:/home/nxautomation/run:/bin/bash
