@@ -4,7 +4,7 @@ get_sas_token() {
     local EVENTHUB_URI="timwehn345454345.servicebus.windows.net/timwehn345454345"
     local SHARED_ACCESS_KEY_NAME="diagnostics"
     local SHARED_ACCESS_KEY="PRIMARY OR SECONDARY KEY"
-    local EXPIRY=${EXPIRY:=$((60 * 60 * 24))} # Default token expiry is 1 day
+    local EXPIRY=${EXPIRY:=$((60 * 60 * 24))} # Default token expiry is 1 day. *** increase to something longer ***
 
     local ENCODED_URI=$(echo -n $EVENTHUB_URI | jq -s -R -r @uri)
     local TTL=$(($(date +%s) + $EXPIRY))
